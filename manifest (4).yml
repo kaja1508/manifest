@@ -1,0 +1,47 @@
+_metadata:
+  major_version: 1
+  minor_version: 1
+display_information:
+  name: Digite PPM
+features:
+  app_home:
+    home_tab_enabled: true
+    messages_tab_enabled: true
+    messages_tab_read_only_enabled: false
+  bot_user:
+    display_name: Digite PPM
+    always_online: true
+  slash_commands:
+    - command: /create-demand
+      url: https://demandcapturegroup.slack.com/command/create-demand
+      description: Create a new demand
+      should_escape: false
+    - command: /create-demand-modal
+      url: https://demandcapturegroup.slack.com/command/create-demand-modal
+      description: Demand Modal
+      should_escape: false
+oauth_config:
+  redirect_urls:
+    - https://demandcapturegroup.slack.com/slack/redirect
+  scopes:
+    bot:
+      - chat:write
+      - commands
+      - files:read
+      - files:write
+      - groups:read
+      - groups:write
+      - users:read
+      - team:read
+settings:
+  event_subscriptions:
+    request_url: https://demandcapturegroup.slack.com/slack/events
+    bot_events:
+      - app_home_opened
+      - team_join
+  interactivity:
+    is_enabled: true
+    request_url: https://demandcapturegroup.slack.com/slack/events
+  org_deploy_enabled: false
+  socket_mode_enabled: false
+  token_rotation_enabled: false
